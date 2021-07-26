@@ -282,49 +282,49 @@
                                                                     <table class="table table-bordered">
                                                                       <thead>
                                                                         <tr>
-                                                                          <th scope="col">Select Day</th>
-                                                                          <th scope="col">Article Name</th>
-                                                                          <th scope="col">Author</th>
-                                                                          <th scope="col">Words</th>
-                                                                          <th scope="col">Shares</th>
+                                                                          <th scope="col">Select</th>
+                                                                          <th scope="col">Name</th>
+                                                                          <th scope="col">Distance Away</th>
+                                                                          <th scope="col">Rating</th>
+                                                                          <th scope="col">Remove</th>
                                                                         </tr>
                                                                       </thead>
                                                                       <tbody>
                                                                         <tr>
                                                                           <td>
                                                                             <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck1" name="customer" checked>
+                                                                                <input type="checkbox" class="custom-control-input" id="customCheck1"  checked>
                                                                                 <label class="custom-control-label" for="customCheck1">1</label>
                                                                             </div>
                                                                           </td>
-                                                                          <td>Bootstrap 4 CDN and Starter Template</td>
-                                                                          <td>Cristina</td>
-                                                                          <td>913</td>
-                                                                          <td>2.846</td>
+                                                                          <td>abc</td>
+                                                                          <td>4.12</td>
+                                                                          <td>4.5</td>
+                                                                          <td><button class="btn btn-primary">Remove</button></td>
                                                                         </tr>
                                                                         <tr>
-                                                                          <td>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck2" name="customer">
-                                                                                <label class="custom-control-label" for="customCheck2">2</label>
-                                                                            </div>
-                                                                          </td>
-                                                                          <td>Bootstrap Grid 4 Tutorial and Examples</td>
-                                                                          <td>Cristina</td>
-                                                                          <td>1.434</td>
-                                                                          <td>3.417</td>
+                                                                            <td>
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="customCheck2" >
+                                                                                    <label class="custom-control-label" for="customCheck2">1</label>
+                                                                                </div>
+                                                                              </td>
+                                                                              <td>abc</td>
+                                                                              <td>4.12</td>
+                                                                              <td>4.5</td>
+                                                                              <td><button class="btn btn-primary">Remove</button></td>
                                                                         </tr>
                                                                         <tr>
-                                                                          <td>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck3" name="customer">
-                                                                                <label class="custom-control-label" for="customCheck3">3</label>
-                                                                            </div>
-                                                                          </td>
-                                                                          <td>Bootstrap Flexbox Tutorial and Examples</td>
-                                                                          <td>Cristina</td>
-                                                                          <td>1.877</td>
-                                                                          <td>1.234</td>
+                                                                            <td>
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="customCheck3" >
+                                                                                    <label class="custom-control-label" for="customCheck3">1</label>
+                                                                                </div>
+                                                                              </td>
+                                                                              <td>abc</td>
+                                                                              <td>4.12</td>
+                                                                              <td>4.5</td>
+                                                                              <td><button class="btn btn-primary">Remove</button></td>
                                                                         </tr>
                                                                       </tbody>
                                                                     </table>
@@ -334,7 +334,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                        <button type="button" class="btn btn-primary">Share Details</button>
                                                         </div>
                                                     </div>
                                                     </div>
@@ -364,84 +364,79 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container">
-                                    <form action="/action_page.php">
-                                      <div class="row">
-                                        <div class="col-25">
-                                          <label for="fname">First Name</label>
-                                        </div>
-                                        <div class="col-75">
-                                          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                                        </div>
+                                    <div class="row">
+                                      <div class="col-12">
+                                        <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                              <th scope="col">Select</th>
+                                              <th scope="col">Name</th>
+                                              <th scope="col">From</th>
+                                              <th scope="col">Where</th>
+                                              <th scope="col">Number Of Members</th>
+                                              <th scope="col">Date Of Journey</th>
+                                              <th scope="col">Time Of Journey</th>
+                                              <th scope="col">Rating</th>
+                                              <th scope="col">Remove</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck11"  checked>
+                                                    <label class="custom-control-label" for="customCheck11">1</label>
+                                                </div>
+                                              </td>
+                                              <td>abc</td>
+                                              <td>4.12</td>
+                                              <td>pos1</td>
+                                              <td>pos2</td>
+                                              <td>4</td>
+                                              <td>12-Apr-2021</td>
+                                              <td>12:10pm</td>
+                                              <td>4.5</td>
+                                              <td><button class="btn btn-primary">Remove</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck22" >
+                                                        <label class="custom-control-label" for="customCheck22">1</label>
+                                                    </div>
+                                                  </td>
+                                                  <td>abc</td>
+                                                  <td>4.12</td>
+                                                  <td>pos1</td>
+                                                  <td>pos2</td>
+                                                  <td>4</td>
+                                                  <td>12-Apr-2021</td>
+                                                  <td>12:10pm</td>
+                                                  <td>4.5</td>
+                                                  <td><button class="btn btn-primary">Remove</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck33" >
+                                                        <label class="custom-control-label" for="customCheck33">1</label>
+                                                    </div>
+                                                  </td>
+                                                  <td>abc</td>
+                                                  <td>4.12</td>
+                                                  <td>pos1</td>
+                                                  <td>pos2</td>
+                                                  <td>4</td>
+                                                  <td>12-Apr-2021</td>
+                                                  <td>12:10pm</td>
+                                                  <td>4.5</td>
+                                                  <td><button class="btn btn-primary">Remove</button></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
                                       </div>
-                                      <div class="row">
-                                        <div class="col-25">
-                                          <label for="lname">Last Name</label>
-                                        </div>
-                                        <div class="col-75">
-                                          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                                        </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="col-25">
-                                          <label for="member_count">Number Of Members</label>
-                                        </div>
-                                        <div class="col-75">
-                                          <input type="text" id="member_count" name="member_count" placeholder="Number Of Member Travelling">
-                                        </div>
-                                      </div>
-
-                                      <div class="row">
-                                          <div class="col-25">
-                                            <label for="phoneNumber">Phone Number</label>
-                                          </div>
-                                          <div class="col-75">
-                                            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="+91XXXXXXXXXX">
-                                          </div>
-                                          <input type="checkbox" id="registeredNum" name="registeredNum" value="reg">
-                                          <label for="registeredNum"> Registered Number</label>
-                                        </div>
-                                      <div class="row">
-                                        <div class="col-25">
-                                          <label for="from">From Where</label>
-                                        </div>
-                                        <div class="col-75">
-                                          <select id="from" name="from">
-                                            <option value="xyz">xyz</option>
-                                            <option value="abc">abc</option>
-                                            <option value="def">DEF</option>
-                                          </select>                                      
-                                      </div>
-                                      </div>
-                                      <div class="row">
-                                            <div class="col-25">
-                                              <label for="To_Where">To</label>
-                                            </div>
-                                            <div class="col-75">
-                                              <select id="To" name="To">
-                                                <option value="xyz">xyz</option>
-                                                <option value="abc">abc</option>
-                                                <option value="def">DEF</option>
-                                              </select>
-                                          </div>
-                                  </div>
-                                        <div class="row">
-                                            <label for="date_fix">Date and Time To Travel</label>
-                                            <input type="datetime-local" id="date_fix" name="date_fix">
-                                        </div>
-
-                                      <div class="row">
-                                          <div class="col-25">
-                                            <label for="country">Prefered Rides</label>
-                                          </div>
-                                          <div class="col-75">
-                                            <select id="cabType" name="cabType">
-                                              <option value="General Cab">General Cab</option>
-                                              <option value="XL Cab">XL Cab</option>
-                                              <option value="Premium Cab">Premium Cab</option>
-                                            </select>
-                                        </div>       
-                                  </div>
-                              </div>
+                                    </div>
+                                  </div>                                
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
