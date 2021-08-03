@@ -1,65 +1,45 @@
 package com.rupeek.CarBookingApplication.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-public class Driver extends AUser implements Serializable {
-
+@Table(name = "Driver")
+public class Driver extends AUser {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(columnDefinition = "driver_id")
-    private int driver_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "driverid")
+    private int driverId;
 
-    String license_number;
+    private String licenceNo;
+    private float rating;
 
-    Cab cab;
+    //Cab Object Missing
 
-    Float rating;
-
-    public Driver(String username, String password, String address, int number, String email_address) {
-        super(username, password, address, number, email_address);
+    public Driver(String username, String password, String address, int phone_number, String email_address) {
+        super(username, password, address, phone_number, email_address);
     }
 
-
-    public int getDriver_id() {
-        return driver_id;
+    public String getLicenceNo() {
+        return licenceNo;
     }
 
-    public void setDriver_id(int driver_id) {
-        this.driver_id = driver_id;
+    public void setLicenceNo(String licenceNo) {
+        this.licenceNo = licenceNo;
     }
 
-    public String getLicense_number() {
-        return license_number;
-    }
-
-    public void setLicense_number(String license_number) {
-        this.license_number = license_number;
-    }
-
-    public Cab getCab() {
-        return cab;
-    }
-
-    public void setCab(Cab cab) {
-        this.cab = cab;
-    }
-
-    public Float getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(Float rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 
-    public int getDriverid() {
-        return driver_id;
+    public int getDriverId() {
+        return driverId;
     }
 
-    public void setDriverid(int driver_id) {
-        this.driver_id = driver_id;
+    public void setDriverId(int driverId) {
+        this.driverId = driverId;
     }
-
 }

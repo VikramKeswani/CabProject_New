@@ -7,48 +7,43 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class TripBooking implements Serializable {
+@Table(name="TripBooking")
+public class TripBooking  {
+
     @Id
-    @Column(name="TripBookingId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private int tripBookingId;
 
-    @OneToOne(mappedBy = "tripBooking")
+    @OneToOne(mappedBy = "tripBookingId")
     private Customer customerId;
 
     @Column(name="Source")
     private String fromLocation;
 
-    @Column(name="Destination")
+    @Column(name="destination")
     private String toLocation;
 
-    @Column(name="ArrivalTime")
+    @Column(name="arrivaltime")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date fromDateTime;
 
-    @Column(name="DepatureTime")
+    @Column(name="depaturetime")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date toDateTime;
 
-    @Column(name="Ideal/Busy")
-    boolean status;
 
-    @Column(name="DistanceToCover")
+    @Column(name="idealbusy")
+    int status;
+
+    @Column(name="distancetocover")
     float distanceKm;
 
-    @Column(name="AmountToPay")
+    @Column(name="amounttopay")
     float billAmount;
 
-    public TripBooking(int tripBookingId, Customer customerId, String fromLocation, String toLocation, Date fromDateTime, Date toDateTime, boolean status, float distanceKm, float billAmount) {
-        this.tripBookingId = tripBookingId;
-        this.customerId = customerId;
-        this.fromLocation = fromLocation;
-        this.toLocation = toLocation;
-        this.fromDateTime = fromDateTime;
-        this.toDateTime = toDateTime;
-        this.status = status;
-        this.distanceKm = distanceKm;
-        this.billAmount = billAmount;
-    }
+    //Customer Object Missing
+
 
     public int getTripBookingId() {
         return tripBookingId;
@@ -56,14 +51,6 @@ public class TripBooking implements Serializable {
 
     public void setTripBookingId(int tripBookingId) {
         this.tripBookingId = tripBookingId;
-    }
-
-    public Customer getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Customer customerId) {
-        this.customerId = customerId;
     }
 
     public String getFromLocation() {
@@ -98,11 +85,12 @@ public class TripBooking implements Serializable {
         this.toDateTime = toDateTime;
     }
 
-    public boolean isStatus() {
+
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

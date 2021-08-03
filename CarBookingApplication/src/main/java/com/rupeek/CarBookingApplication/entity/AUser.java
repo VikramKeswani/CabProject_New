@@ -1,17 +1,17 @@
 package com.rupeek.CarBookingApplication.entity;
 
-import javax.persistence.Column;
-
+import javax.persistence.*;
+@MappedSuperclass
 public class AUser {
-    @Column(name="USERNAME")
+    @Column(name="username")
     private String username;
-    @Column(name="PASSWORD")
+    @Column(name="password")
     private String password;
-    @Column(name="ADDRESS")
+    @Column(name="address")
     private String address;
-    @Column(name="MOBILE NUMBER")
+    @Column(name="mobilenumber")
     private int phone_number;
-    @Column(name="EMAIL ADDRESS")
+    @Column(name="emailaddress")
     private String email_address;
 
     public AUser(String username, String password, String address, int phone_number, String email_address) {
@@ -20,14 +20,6 @@ public class AUser {
         this.address = address;
         this.phone_number = phone_number;
         this.email_address = email_address;
-    }
-
-    public int getPhone_number() {
-        return phone_number;
-    }
-
-    public void setPhone_number(int phone_number) {
-        this.phone_number = phone_number;
     }
 
     public String getUsername() {
@@ -54,6 +46,13 @@ public class AUser {
         this.address = address;
     }
 
+    public int getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(int phone_number) {
+        this.phone_number = phone_number;
+    }
 
     public String getEmail_address() {
         return email_address;
