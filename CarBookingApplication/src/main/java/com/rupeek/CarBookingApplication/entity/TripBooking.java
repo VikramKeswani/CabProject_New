@@ -42,8 +42,12 @@ public class TripBooking  {
     @Column(name="amounttopay")
     float billAmount;
 
-    //Customer Object Missing
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    // @JoinColumn annotation helps us specify the column
+    // we'll use for joining an entity association or element collection.
+    @JoinColumn(name = "driverId", referencedColumnName = "driverid")
+    private Driver driver;
 
     public int getTripBookingId() {
         return tripBookingId;

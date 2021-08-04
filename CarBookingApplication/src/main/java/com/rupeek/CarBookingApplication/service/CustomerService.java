@@ -29,8 +29,8 @@ public class CustomerService implements IService<Customer> {
 
     @Override
     public void delete(Integer id) {
-        Customer driver = customerRepository.findById(id).get();
-        customerRepository.delete(driver);
+        Customer customer = customerRepository.findById(id).get();
+        customerRepository.delete(customer);
     }
 
 }
