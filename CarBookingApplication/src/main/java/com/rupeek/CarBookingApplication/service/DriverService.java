@@ -5,6 +5,8 @@ import com.rupeek.CarBookingApplication.entity.Driver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("DriverRepository")
 public class DriverService implements IService<Driver>{
 
@@ -29,7 +31,12 @@ public class DriverService implements IService<Driver>{
 
     @Override
     public void delete(Integer id){
-        Driver driver = driverRepository.findById(id).get();
-        driverRepository.delete(driver);
+        driverRepository.deleteById(id);
     }
+
+    public List<Driver> viewBestDriver(){
+        return driverRepository.viewBestDriver();
+    }
+
+
 }

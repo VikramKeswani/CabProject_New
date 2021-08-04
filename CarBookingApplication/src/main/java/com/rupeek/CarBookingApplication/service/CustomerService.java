@@ -13,6 +13,7 @@ public class CustomerService implements IService<Customer> {
     @Override
     public void create(Customer customer) {
         customerRepository.save(customer);
+
     }
 
     @Override
@@ -29,8 +30,16 @@ public class CustomerService implements IService<Customer> {
 
     @Override
     public void delete(Integer id) {
-        Customer customer = customerRepository.findById(id).get();
-        customerRepository.delete(customer);
+        customerRepository.deleteById(id);
+    }
+
+    public Customer validateCustomer(String username,String password){
+        Customer customer = customerRepository.validateCustomer(username,password);
+        if(customer!=null)
+            return customer;
+
+        System.out.println("Wrong UserName Or Password");
+        return null;
     }
 
 }
