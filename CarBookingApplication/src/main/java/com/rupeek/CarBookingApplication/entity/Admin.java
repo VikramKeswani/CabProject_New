@@ -10,6 +10,9 @@ public class Admin extends AUser {
     @Column(name = "adminid")
     private int adminId;
 
+    public Admin(){
+        super();
+    }
     public Admin(String username, String password, String address, int phone_number, String email_address) {
         super(username, password, address, phone_number, email_address);
     }

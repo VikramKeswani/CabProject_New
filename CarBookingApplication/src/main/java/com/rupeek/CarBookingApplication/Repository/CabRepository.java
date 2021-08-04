@@ -16,5 +16,4 @@ public interface CabRepository extends JpaRepository<Cab,Integer> {
 
     @Query("SELECT count(*) FROM Cab c WHERE LOWER(c.carType) = LOWER(:carType)")
     int countCabsOfType(@Param("carType") String carType);
-
 }

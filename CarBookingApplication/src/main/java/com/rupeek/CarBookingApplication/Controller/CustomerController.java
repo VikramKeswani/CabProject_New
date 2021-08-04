@@ -24,7 +24,7 @@ public class CustomerController {
             customerService.create(customer);
     }
 
-    @GetMapping("/insert")
+    @GetMapping("/get")
     public ResponseEntity<Customer> getCustomer(@RequestParam Integer id){
         //return customerService.get(id);
         Customer customer = customerService.get(id);

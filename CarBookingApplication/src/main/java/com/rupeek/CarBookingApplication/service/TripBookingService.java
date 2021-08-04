@@ -17,15 +17,12 @@ public class TripBookingService implements IService<TripBooking> {
     @Override
     public void create(TripBooking object) {
         tripBookingRepository.save(object);
+
     }
 
     @Override
     public TripBooking get(Integer id) {
         return null;
-    }
-
-    public List<TripBooking> get(Customer customerId) {
-        return tripBookingRepository.viewAllTripCustomer(customerId);
     }
 
     @Override
@@ -37,6 +34,14 @@ public class TripBookingService implements IService<TripBooking> {
     public void delete(Integer id) {
         tripBookingRepository.deleteById(id);
     }
+
+    public List<TripBooking> getAllTripCustomer(Customer customerId) {
+        return tripBookingRepository.viewAllTripCustomer(customerId);
+    }
+
+
+
+
 
 
 }
