@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -15,8 +16,9 @@ public class TripBooking  {
     @Column(name="id")
     private int tripBookingId;
 
-    @OneToOne(mappedBy = "tripBookingId")
-    private Customer customerId;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customerId", referencedColumnName = "customerid")
+    private Customer custId;
 
     @Column(name="Source")
     private String fromLocation;
@@ -24,11 +26,17 @@ public class TripBooking  {
     @Column(name="destination")
     private String toLocation;
 
-    @Column(name="arrivaltime")
+    @Column(name="fromDateTime")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date fromDateTime;
 
-    @Column(name="depaturetime")
+//        @Column(name="arrivaltime")
+//        private LocalDateTime fromDateTime;
+//
+//        @Column(name="depaturetime")
+//        private LocalDateTime toDateTime;
+
+    @Column(name="toDateTime")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date toDateTime;
 
@@ -49,12 +57,24 @@ public class TripBooking  {
     @JoinColumn(name = "driverId", referencedColumnName = "driverid")
     private Driver driver;
 
+    public TripBooking() {
+        super();
+    }
+
     public int getTripBookingId() {
         return tripBookingId;
     }
 
     public void setTripBookingId(int tripBookingId) {
         this.tripBookingId = tripBookingId;
+    }
+
+    public Customer getCustId() {
+        return custId;
+    }
+
+    public void setCustId(Customer custId) {
+        this.custId = custId;
     }
 
     public String getFromLocation() {
@@ -89,7 +109,6 @@ public class TripBooking  {
         this.toDateTime = toDateTime;
     }
 
-
     public int getStatus() {
         return status;
     }
@@ -112,5 +131,13 @@ public class TripBooking  {
 
     public void setBillAmount(float billAmount) {
         this.billAmount = billAmount;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 }

@@ -5,6 +5,8 @@ import com.rupeek.CarBookingApplication.entity.Cab;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("CabRepository")
 public class CabService implements IService<Cab> {
 
@@ -31,4 +33,13 @@ public class CabService implements IService<Cab> {
     public void delete(Integer id) {
          cabRepository.deleteById(id);
     }
+
+    public List<Cab> getByCarType(String carType){
+        return cabRepository.getByCarType(carType);
+    }
+
+    public Integer countCabsOfType(String carType){
+        return cabRepository.countCabsOfType(carType);
+    }
+
 }

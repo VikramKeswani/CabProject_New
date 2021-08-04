@@ -22,6 +22,10 @@ public class AUser {
         this.email_address = email_address;
     }
 
+    public AUser() {
+
+    }
+
     public String getUsername() {
         return username;
     }

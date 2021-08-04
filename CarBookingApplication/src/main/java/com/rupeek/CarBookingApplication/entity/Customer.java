@@ -10,10 +10,12 @@ public class Customer extends AUser{
     @Column(name = "customerid")
     private int customerId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "tripBookingId", referencedColumnName = "id")
+    @OneToOne(mappedBy = "custId")
     private TripBooking tripBookingId;
 
+    public Customer(){
+        super();
+    }
 
     public Customer(String username, String password, String address, int phone_number, String email_address) {
         super(username, password, address, phone_number, email_address);
@@ -34,5 +36,4 @@ public class Customer extends AUser{
     public void setTripBookingId(TripBooking tripBookingId) {
         this.tripBookingId = tripBookingId;
     }
-
 }

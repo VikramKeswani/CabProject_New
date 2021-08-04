@@ -18,6 +18,10 @@ public class Cab {
     @OneToOne(mappedBy = "cab")
     private Driver driver;
 
+    public Cab() {
+        super();
+    }
+
     public int getCabId() {
         return cabId;
     }
