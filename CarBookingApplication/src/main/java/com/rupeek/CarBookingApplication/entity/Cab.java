@@ -12,6 +12,7 @@ public class Cab {
 
     @Column(name="cartype")
     private String carType;
+
     @Column(name="perkmrate")
     private float perKmRate;
 
@@ -21,6 +22,7 @@ public class Cab {
     public Cab() {
         super();
     }
+
 
     public int getCabId() {
         return cabId;

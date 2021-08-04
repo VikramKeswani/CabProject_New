@@ -16,12 +16,17 @@ public class Driver extends AUser {
     @Column(name="rating")
     private float rating;
 
+    //@Column(nullable = false)
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cabId", referencedColumnName = "id")
     private Cab cab;
 
     @OneToMany(mappedBy = "driver")
     private List<TripBooking> tripBookingList;
+
+    public Driver(){
+        super();
+    }
 
     public Driver(String username, String password, String address, int phone_number, String email_address) {
         super(username, password, address, phone_number, email_address);

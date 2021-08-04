@@ -56,6 +56,9 @@ public class AdminController {
         return adminService.getAllTrips(customerId);
     }
 
+    // cabwise and customerwise is missing here.
+
+
     @GetMapping("/getCabDatewise")
     public List<TripBooking> getAllTripDateWise(){
         return adminService.getAllTripDateWise();
@@ -66,6 +69,5 @@ public class AdminController {
         return adminService.getAllTripForDays(customerId,fromDateTime,toDateTime);
     }
 
-    // cabwise and customerwise is missing here.
 
 }

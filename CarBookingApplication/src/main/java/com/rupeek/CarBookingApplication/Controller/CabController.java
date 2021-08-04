@@ -18,17 +18,16 @@ public class CabController {
     CabService cabService;
 
     @PostMapping("/insert")
-    public ResponseEntity<Admin> insertAdmin(@RequestBody Cab cab){
-        if(cab==null){
-            return new ResponseEntity( "Sorry No customer with that id", HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<Admin> insertCab(@RequestBody Cab cab){
+//        if(cab==null){
+//            return new ResponseEntity( "Sorry No customer with that id", HttpStatus.NOT_FOUND);
+//        }
         cabService.create(cab);
-
         return new ResponseEntity("Succesfully Admin Intserted",HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Admin> updateAdmin(@ RequestBody Cab cab){
+    public ResponseEntity<Admin> updateCab(@ RequestBody Cab cab){
 
         if(cab==null){
             return new ResponseEntity( "Sorry No customer with that id", HttpStatus.NOT_FOUND);

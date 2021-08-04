@@ -55,7 +55,8 @@ public class CustomerController {
         customerService.update(customer);
     }
 
-//    public ResponseEntity<String> validateUser(@RequestBody ){
+//    @PostMapping("/validate")
+//    public ResponseEntity<String> validateUser(@RequestBody ValidateRequest validateRequest){
 //
 //    }
 
