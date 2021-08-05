@@ -17,7 +17,7 @@ public class TripBooking  {
     private int tripBookingId;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customerId", referencedColumnName = "customerid")
+//    @JoinColumn(name = "customerId", referencedColumnName = "customerid")
     private Customer custId;
 
     @Column(name="Source")

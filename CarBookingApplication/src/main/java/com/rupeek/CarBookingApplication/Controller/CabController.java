@@ -17,38 +17,45 @@ public class CabController {
     @Autowired(required = true)
     CabService cabService;
 
+    //working
     @PostMapping("/insert")
     public ResponseEntity<Admin> insertCab(@RequestBody Cab cab){
 //        if(cab==null){
 //            return new ResponseEntity( "Sorry No customer with that id", HttpStatus.NOT_FOUND);
 //        }
         cabService.create(cab);
-        return new ResponseEntity("Succesfully Admin Intserted",HttpStatus.CREATED);
+        return new ResponseEntity("Succesfully Cab Intserted",HttpStatus.CREATED);
     }
 
+
+    //working
     @PutMapping("/update")
     public ResponseEntity<Admin> updateCab(@ RequestBody Cab cab){
 
         if(cab==null){
-            return new ResponseEntity( "Sorry No customer with that id", HttpStatus.NOT_FOUND);
+            return new ResponseEntity( "Sorry No Cab with that id", HttpStatus.NOT_FOUND);
         }
 
         cabService.create(cab);
-        return new ResponseEntity("Succesfully Admin Updated",HttpStatus.OK);
+        return new ResponseEntity("Succesfully Cab Updated",HttpStatus.OK);
     }
 
+
+    //working
     @DeleteMapping("/delete")
     public ResponseEntity<String> deleteAdmin(@RequestParam Integer cabId){
         if(cabId==null){
-            return new ResponseEntity<String>( "Sorry No customer with that id", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<String>( "Sorry No Cab with that id", HttpStatus.NOT_FOUND);
         }
 
         cabService.delete(cabId);
-        return new ResponseEntity<String>("Succesfully Admin Deleted",HttpStatus.OK);
+        return new ResponseEntity<String>("Succesfully Cab Deleted",HttpStatus.OK);
     }
+
 
     @GetMapping("/viewcabtype")
     public List<Cab> viewCabOfType(@RequestParam String carType){
+
         return cabService.getByCarType(carType);
     }
 

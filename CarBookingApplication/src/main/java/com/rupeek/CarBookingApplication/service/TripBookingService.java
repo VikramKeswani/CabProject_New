@@ -36,8 +36,10 @@ public class TripBookingService implements IService<TripBooking> {
     }
 
     public List<TripBooking> viewAllTripCustomer(Customer customerId) {
-        return tripBookingRepository.viewAllTripCustomer(customerId);
+        Integer id = customerId.getCustomerId();
+        return (List<TripBooking>) tripBookingRepository.getById(id);
     }
+
 
     //calcuate Bills Missing
 

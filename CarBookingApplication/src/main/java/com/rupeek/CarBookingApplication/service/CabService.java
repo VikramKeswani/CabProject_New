@@ -34,7 +34,8 @@ public class CabService implements IService<Cab> {
          cabRepository.deleteById(id);
     }
 
-    public List<Cab> getByCarType(String carType){
+    public List<Cab> getByCarType(String carType)
+    {
         return cabRepository.getByCarType(carType);
     }
 

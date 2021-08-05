@@ -21,6 +21,7 @@ public class AdminController {
     @Autowired(required = true)
     AdminService adminService;
 
+    //working
     @PostMapping("/insert")
     public ResponseEntity<Admin> insertAdmin(@RequestBody Admin admin){
         if(admin==null){
@@ -31,6 +32,7 @@ public class AdminController {
         return new ResponseEntity("Succesfully Admin Intserted",HttpStatus.CREATED);
     }
 
+    //working
     @PutMapping("/update")
     public ResponseEntity<Admin> updateAdmin(@ RequestBody Admin admin){
 
@@ -41,6 +43,8 @@ public class AdminController {
         adminService.create(admin);
         return new ResponseEntity("Succesfully Admin Updated",HttpStatus.OK);
     }
+
+
 
     @DeleteMapping("/delete")
     public ResponseEntity<String> deleteAdmin(@RequestParam Integer adminId){

@@ -1,5 +1,7 @@
 package com.rupeek.CarBookingApplication.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,11 +18,15 @@ public class Driver extends AUser {
     @Column(name="rating")
     private float rating;
 
-    //@Column(nullable = false)
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cabId", referencedColumnName = "id")
+
+//    @JsonIgnore
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "cabId")
+    @JsonIgnore
+    @OneToOne
     private Cab cab;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "driver")
     private List<TripBooking> tripBookingList;
 
@@ -62,5 +68,13 @@ public class Driver extends AUser {
 
     public void setCab(Cab cab) {
         this.cab = cab;
+    }
+
+    public List<TripBooking> getTripBookingList() {
+        return tripBookingList;
+    }
+
+    public void setTripBookingList(List<TripBooking> tripBookingList) {
+        this.tripBookingList = tripBookingList;
     }
 }

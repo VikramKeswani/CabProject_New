@@ -1,5 +1,7 @@
 package com.rupeek.CarBookingApplication.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +11,7 @@ public class Customer extends AUser{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customerid")
     private int customerId;
+
 
     @OneToOne(mappedBy = "custId")
     private TripBooking tripBookingId;

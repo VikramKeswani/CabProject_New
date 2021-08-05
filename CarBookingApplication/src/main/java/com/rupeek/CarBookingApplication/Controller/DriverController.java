@@ -28,7 +28,7 @@ public class DriverController {
         }
         driverService.create(driver);
 
-        return new ResponseEntity("Succesfully Admin Intserted", HttpStatus.CREATED);
+        return new ResponseEntity("Succesfully Driver Intserted", HttpStatus.CREATED);
     }
 
     @PutMapping("/update")

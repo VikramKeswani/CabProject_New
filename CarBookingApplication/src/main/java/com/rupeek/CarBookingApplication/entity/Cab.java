@@ -1,5 +1,7 @@
 package com.rupeek.CarBookingApplication.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,7 +18,9 @@ public class Cab {
     @Column(name="perkmrate")
     private float perKmRate;
 
+
     @OneToOne(mappedBy = "cab")
+
     private Driver driver;
 
     public Cab() {
