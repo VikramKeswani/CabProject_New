@@ -13,17 +13,17 @@ import java.util.List;
 
 
 public interface AdminRepository extends JpaRepository<Admin,Integer> {
-    @Query("SELECT t FROM TripBooking t WHERE t.custId = :custId")
-    List<TripBooking> getAllTrips(@Param("custId") int custId);
+    @Query("SELECT t FROM TripBooking t WHERE t.customer.customerId = :customerId")
+    List<TripBooking> getAllTrips(@Param("customerId") Integer customerId);
 
-    @Query("SELECT t FROM TripBooking t WHERE t.id = :id")
-    List<TripBooking> getTripsCabwise(@Param("id") int id);
+    @Query("SELECT t FROM TripBooking t WHERE t.tripBookingId = :id")
+    List<TripBooking> getTripsCabwise(@Param("id") Integer id);
 
     @Query("SELECT t FROM TripBooking t ORDER BY t.fromDateTime ASC")
     List<TripBooking> getTripsDateWise();
 
-    @Query("SELECT t FROM TripBooking t WHERE t.custId = :custId AND t.fromDateTime >= :fromDateTime AND t.toDateTime <= :toDateTime")
-    List<TripBooking> getAllTripsForDays(@Param("custId") int custId,
+    @Query("SELECT t FROM TripBooking t WHERE t.customer.customerId = :customerId AND t.fromDateTime >= :fromDateTime AND t.toDateTime <= :toDateTime")
+    List<TripBooking> getAllTripsForDays(@Param("customerId") int customerId,
                                          @Param("fromDateTime") Date fromDateTime, @Param("toDateTime") Date toDateTime );
 
 }

@@ -35,10 +35,10 @@ public class TripBookingService implements IService<TripBooking> {
         tripBookingRepository.deleteById(id);
     }
 
-    public List<TripBooking> viewAllTripCustomer(Customer customerId) {
-        Integer id = customerId.getCustomerId();
-        return (List<TripBooking>) tripBookingRepository.getById(id);
-    }
+//    public List<TripBooking> viewAllTripCustomer(Customer customerId) {
+//        Integer id = customerId.getCustomerId();
+//        return (List<TripBooking>) tripBookingRepository.getById(id);
+//    }
 
 
     //calcuate Bills Missing

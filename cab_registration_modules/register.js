@@ -1,18 +1,20 @@
+document.querySelector('#cab_form').addEventListener("submit",fnAddCab);
+
 function fnAddCab(evt){
     obj = {}
-    obj.perKmRate = document.querySelector("input[id='perKmRate']").value;
-    obj.carType= document.querySelector("input[id='carType']").value;
+    obj.perKmRate = document.querySelector("#inputPerKmRate").value;
+    obj.carType= document.querySelector("#inputCabType").value;
     console.log(obj);
     evt.preventDefault();
 
-    fetch("http://localhost:8080/cabs/insert", 
+    fetch("http://localhost:8080/cab/insert", 
     {
         method: 'POST',
         body: JSON.stringify(obj),
         headers: {
             "Content-Type": "application/json"
         }
-    }).then(resp => resp.json())
+    }).then(resp => resp.text())
     .then(data => {
         alert("Record Inserted Successfully"+  data)
         window.location.replace("../login_module/login.html");

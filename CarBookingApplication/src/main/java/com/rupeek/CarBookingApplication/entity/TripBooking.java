@@ -16,9 +16,11 @@ public class TripBooking  {
     @Column(name="id")
     private int tripBookingId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "customerId", referencedColumnName = "customerid")
-    private Customer custId;
+
+
+    @OneToOne
+    @JoinColumn(name = "customerId", referencedColumnName = "customerid", unique = true)
+    private Customer customer;
 
     @Column(name="Source")
     private String fromLocation;
@@ -70,11 +72,11 @@ public class TripBooking  {
     }
 
     public Customer getCustId() {
-        return custId;
+        return customer;
     }
 
     public void setCustId(Customer custId) {
-        this.custId = custId;
+        this.customer = custId;
     }
 
     public String getFromLocation() {

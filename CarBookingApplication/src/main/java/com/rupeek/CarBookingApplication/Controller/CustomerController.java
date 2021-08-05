@@ -55,10 +55,17 @@ public class CustomerController {
         customerService.update(customer);
     }
 
-//    @PostMapping("/validate")
-//    public ResponseEntity<String> validateUser(@RequestBody ValidateRequest validateRequest){
-//
-//    }
+    @PostMapping("/validate")
+    public ResponseEntity<String> validateUser(@RequestBody Customer customer){
+                String user=customer.getUsername();
+                String pass = customer.getPassword();
+
+                if(customerService.validateCustomer(user,pass)!=null){
+                    return new ResponseEntity("Login Successful", HttpStatus.ACCEPTED);
+                }
+
+                return new ResponseEntity<String>("Falied Login",HttpStatus.NOT_FOUND);
+    }
 
 
 }

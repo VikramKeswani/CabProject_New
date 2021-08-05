@@ -22,8 +22,11 @@ public class Driver extends AUser {
 //    @JsonIgnore
 //    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "cabId")
-    @JsonIgnore
+  //  @JsonIgnore
+
+
     @OneToOne
+    @JoinColumn(name = "cabId", unique = true)
     private Cab cab;
 
     @JsonIgnore

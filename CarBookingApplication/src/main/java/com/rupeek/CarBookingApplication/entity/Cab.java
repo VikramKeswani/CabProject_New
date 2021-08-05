@@ -19,8 +19,8 @@ public class Cab {
     private float perKmRate;
 
 
+    @JsonIgnore
     @OneToOne(mappedBy = "cab")
-
     private Driver driver;
 
     public Cab() {

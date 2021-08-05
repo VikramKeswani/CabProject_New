@@ -12,6 +12,6 @@ import java.util.List;
 
 public interface TripBookingRepository extends JpaRepository<TripBooking,Integer> {
 
-    @Query("SELECT t FROM TripBooking t WHERE t.custId = :customerId")
-    public List<TripBooking> viewAllTripCustomer(@Param("customerId")Customer customerId);
+//    @Query("SELECT t FROM TripBooking t WHERE t.customerId = :customerId")
+//    public List<TripBooking> viewAllTripCustomer(@Param("customerId")Customer customerId);
 }

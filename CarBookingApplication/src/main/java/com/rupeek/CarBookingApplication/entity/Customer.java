@@ -13,7 +13,8 @@ public class Customer extends AUser{
     private int customerId;
 
 
-    @OneToOne(mappedBy = "custId")
+    @JsonIgnore
+    @OneToOne(mappedBy = "customer")
     private TripBooking tripBookingId;
 
     public Customer(){

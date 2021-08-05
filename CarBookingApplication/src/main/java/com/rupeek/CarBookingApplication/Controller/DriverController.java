@@ -64,13 +64,10 @@ public class DriverController {
 
 
     @GetMapping("/getbestdriver")
-    public ResponseEntity<List<Driver>> viewBestDrivers(){
-        List<Driver> driver=driverService.viewBestDriver();
-        if(driver.isEmpty()){
-            return new ResponseEntity("sorry No driver found",HttpStatus.NOT_FOUND);
-        }
-
-        return new ResponseEntity(driver,HttpStatus.OK);
+    public List<Driver> viewBestDrivers() {
+        List<Driver> driver = driverService.viewBestDriver();
+        System.out.println(driver);
+        return driver;
     }
 
 }

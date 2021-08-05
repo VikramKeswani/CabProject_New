@@ -50,18 +50,18 @@ public class TripBookingController {
         return new ResponseEntity<String>("Succesfully Admin Deleted", HttpStatus.OK);
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<List<TripBooking>> viewAllTripsCustomer(Customer customerId){
-        List<TripBooking> tripBooking = tripBookingService.viewAllTripCustomer(customerId);
-        if (tripBooking.isEmpty()) {
-            return new ResponseEntity("Sorry customer with that id have no trip", HttpStatus.NOT_FOUND);
-        }
-
-        return new ResponseEntity(tripBooking, HttpStatus.OK);
-    }
-
-
-
+//    @GetMapping("/get")
+//    public ResponseEntity<List<TripBooking>> viewAllTripsCustomer(Customer customerId){
+//        List<TripBooking> tripBooking = tripBookingService.viewAllTripCustomer(customerId);
+//        if (tripBooking.isEmpty()) {
+//            return new ResponseEntity("Sorry customer with that id have no trip", HttpStatus.NOT_FOUND);
+//        }
+//
+//        return new ResponseEntity(tripBooking, HttpStatus.OK);
+//    }
+//
+//
+//
 
 
 }
