@@ -13,9 +13,12 @@ module.exports = {
         "dashboard" :"./public/js/driver_dashboard.js",
         "table_display" :"./public/js/table_display.js",
          "personal_info": "./public/js/personal_info.js",
-        // "add-meeting": "./public/js/add-meeting.js",
-        // "teams": "./public/js/teams.js",
-        // "add-teams": "./public/js/add-teams.js"
+        "register_dashboard": "./public/js/register_dashboard.js",
+        "dashboard": "./public/js/dashboard.js",
+       "book_cab": "./public/js/book_cab.js",
+       "driver_registration": "./public/js/driver_registration.js",
+       "cab_booking": "./public/js/cab_booking.js",
+
     },
     output: {
         path: path.join( __dirname, "dist" ),
@@ -80,13 +83,43 @@ module.exports = {
             inject: true,
             chunks: [ 'register' ]
         }),
-        // new HtmlWebpackPlugin({
-        //     title: 'Add Team',
-        //     filename: './add-teams.html',
-        //     template: path.join( __dirname, 'public', 'add-teams.html' ),
-        //     inject: true,
-        //     chunks: [ 'add-teams' ]
-        // })
+        new HtmlWebpackPlugin({
+            title: 'Add Team',
+            filename: './register_dashboard.html',
+            template: path.join( __dirname, 'public', 'register_dashboard.html' ),
+            inject: true,
+            chunks: [ 'register_dashboard' ]
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Add Team',
+            filename: './dashboard.html',
+            template: path.join( __dirname, 'public', 'dashboard.html' ),
+            inject: true,
+            chunks: [ 'dashboard' ]
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Add Team',
+            filename: './book_cab.html',
+            template: path.join( __dirname, 'public', 'book_cab.html' ),
+            inject: true,
+            chunks: [ 'book_cab' ]
+        }),
+
+        new HtmlWebpackPlugin({
+            title: 'Add Team',
+            filename: './driver_registration.html',
+            template: path.join( __dirname, 'public', 'driver_registration.html' ),
+            inject: true,
+            chunks: [ 'driver_registration' ]
+        }),
+
+        new HtmlWebpackPlugin({
+            title: 'Add Team',
+            filename: './cab_booking.html',
+            template: path.join( __dirname, 'public', 'cab_booking.html' ),
+            inject: true,
+            chunks: [ 'cab_booking' ]
+        }),
 
     ]
 }

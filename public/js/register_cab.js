@@ -19,7 +19,7 @@ function fnAddCab(evt){
     }).then(resp => resp.text())
     .then(data => {
         alert("Record Inserted Successfully"+  data)
-        window.location.replace("./dashboard.html");
+        window.location.replace("./register_dasboard.html");
     } )
 }
 
