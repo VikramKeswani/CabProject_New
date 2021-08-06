@@ -1,5 +1,6 @@
 package com.rupeek.CarBookingApplication.service;
 
+import com.rupeek.CarBookingApplication.Repository.AdminRepository;
 import com.rupeek.CarBookingApplication.Repository.TripBookingRepository;
 import com.rupeek.CarBookingApplication.entity.Customer;
 import com.rupeek.CarBookingApplication.entity.TripBooking;
@@ -13,6 +14,9 @@ public class TripBookingService implements IService<TripBooking> {
 
     @Autowired
     private TripBookingRepository tripBookingRepository;
+
+    @Autowired
+    private AdminRepository adminRepository;
 
     @Override
     public void create(TripBooking object) {
@@ -35,10 +39,9 @@ public class TripBookingService implements IService<TripBooking> {
         tripBookingRepository.deleteById(id);
     }
 
-//    public List<TripBooking> viewAllTripCustomer(Customer customerId) {
-//        Integer id = customerId.getCustomerId();
-//        return (List<TripBooking>) tripBookingRepository.getById(id);
-//    }
+    public List<TripBooking> viewAllTripCustomer(Integer customerId) {
+        return adminRepository.getAllTrips(customerId);
+    }
 
 
     //calcuate Bills Missing

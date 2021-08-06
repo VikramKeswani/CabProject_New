@@ -4,6 +4,7 @@ import com.rupeek.CarBookingApplication.entity.Admin;
 import com.rupeek.CarBookingApplication.entity.Customer;
 import com.rupeek.CarBookingApplication.entity.Driver;
 import com.rupeek.CarBookingApplication.entity.TripBooking;
+import com.rupeek.CarBookingApplication.service.AdminService;
 import com.rupeek.CarBookingApplication.service.DriverService;
 import com.rupeek.CarBookingApplication.service.TripBookingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import java.util.List;
 public class TripBookingController {
     @Autowired(required = true)
     TripBookingService tripBookingService;
+
 
     @PostMapping("/insert")
     public ResponseEntity<Admin> insertAdmin(@RequestBody TripBooking tripBooking) {
@@ -50,18 +52,15 @@ public class TripBookingController {
         return new ResponseEntity<String>("Succesfully Admin Deleted", HttpStatus.OK);
     }
 
-//    @GetMapping("/get")
-//    public ResponseEntity<List<TripBooking>> viewAllTripsCustomer(Customer customerId){
-//        List<TripBooking> tripBooking = tripBookingService.viewAllTripCustomer(customerId);
-//        if (tripBooking.isEmpty()) {
-//            return new ResponseEntity("Sorry customer with that id have no trip", HttpStatus.NOT_FOUND);
-//        }
-//
-//        return new ResponseEntity(tripBooking, HttpStatus.OK);
-//    }
-//
-//
-//
+    @GetMapping("/get")
+    public ResponseEntity<List<TripBooking>> viewAllTripsCustomer(Integer customerId){
+        List<TripBooking> tripBooking = tripBookingService.viewAllTripCustomer(customerId);
+        if (tripBooking.isEmpty()) {
+            return new ResponseEntity("Sorry customer with that id have no trip", HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(tripBooking, HttpStatus.OK);
+    }
 
 
 }

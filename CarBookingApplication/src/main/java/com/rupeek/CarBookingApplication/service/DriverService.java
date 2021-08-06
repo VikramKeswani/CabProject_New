@@ -38,5 +38,8 @@ public class DriverService implements IService<Driver>{
         return driverRepository.viewBestDriver();
     }
 
+    public List<Driver> viewFreeDriver(){
+        return driverRepository.viewFreeDriver();
+    }
 
 }

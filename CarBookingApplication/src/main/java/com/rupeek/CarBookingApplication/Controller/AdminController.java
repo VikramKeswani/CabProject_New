@@ -63,15 +63,15 @@ public class AdminController {
     // cabwise and customerwise is missing here.
 
 
-//    @GetMapping("/getCabDatewise")
-//    public List<TripBooking> getAllTripDateWise(){
-//        return adminService.getAllTripDateWise();
-//    }
-//
-//    @GetMapping("/getAllTripForDays")
-//    public List<TripBooking> getAllTripForDays(@RequestParam Integer customerId, @RequestParam Date fromDateTime, @RequestParam Date toDateTime){
-//        return adminService.getAllTripForDays(customerId,fromDateTime,toDateTime);
-//    }
+    @GetMapping("/getCabDatewise")
+    public List<TripBooking> getAllTripDateWise(){
+        return adminService.getAllTripDateWise();
+    }
+
+    @GetMapping("/getAllTripForDays")
+    public List<TripBooking> getAllTripForDays(@RequestParam Integer customerId, @RequestParam Date fromDateTime, @RequestParam(required = false) Date toDateTime){
+        return adminService.getAllTripForDays(customerId,fromDateTime,toDateTime);
+    }
 
 
 }

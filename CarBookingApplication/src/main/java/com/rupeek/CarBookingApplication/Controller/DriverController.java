@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/driver")
 public class DriverController {
@@ -68,6 +69,11 @@ public class DriverController {
         List<Driver> driver = driverService.viewBestDriver();
         System.out.println(driver);
         return driver;
+    }
+
+    @GetMapping("/viewfreedriver")
+    public List<Driver> viewFreeDriver(){
+        return driverService.viewFreeDriver();
     }
 
 }

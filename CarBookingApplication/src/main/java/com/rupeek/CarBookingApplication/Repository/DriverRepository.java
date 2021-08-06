@@ -12,4 +12,7 @@ public interface DriverRepository extends JpaRepository<Driver,Integer> {
     @Query("SELECT d FROM Driver d WHERE d.rating>=4.5")
     List<Driver> viewBestDriver();
 
+    @Query("select d from Driver d where d.driverId not in (select t.driver.driverId from TripBooking t where t.status=1)")
+    List<Driver> viewFreeDriver();
+
 }

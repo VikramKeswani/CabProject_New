@@ -38,13 +38,13 @@ public class AdminService implements IService<Admin> {
     }
 
 
-//    public List<TripBooking> getAllTripForDays(Integer custId, Date fromDateTime, Date toDateTime){
-//            return adminRepository.getAllTripsForDays(custId,fromDateTime,toDateTime);
-//    }
-//
-//    public List<TripBooking> getAllTripDateWise(){
-//        return adminRepository.getTripsDateWise();
-//    }
+    public List<TripBooking> getAllTripForDays(Integer custId, Date fromDateTime, Date toDateTime){
+            return adminRepository.getAllTripsForDays(custId,fromDateTime,toDateTime);
+    }
+
+    public List<TripBooking> getAllTripDateWise(){
+        return adminRepository.getTripsDateWise();
+    }
 
     public List<TripBooking> getAllTrips(Integer customer){
         return adminRepository.getAllTrips(customer);
