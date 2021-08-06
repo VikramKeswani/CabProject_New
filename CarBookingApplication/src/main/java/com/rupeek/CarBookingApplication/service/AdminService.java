@@ -2,7 +2,6 @@ package com.rupeek.CarBookingApplication.service;
 
 import com.rupeek.CarBookingApplication.Repository.AdminRepository;
 import com.rupeek.CarBookingApplication.entity.Admin;
-import com.rupeek.CarBookingApplication.entity.Customer;
 import com.rupeek.CarBookingApplication.entity.TripBooking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

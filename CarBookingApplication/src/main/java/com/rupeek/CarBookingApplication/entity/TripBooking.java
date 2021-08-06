@@ -32,11 +32,6 @@ public class TripBooking  {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date fromDateTime;
 
-//        @Column(name="arrivaltime")
-//        private LocalDateTime fromDateTime;
-//
-//        @Column(name="depaturetime")
-//        private LocalDateTime toDateTime;
 
     @Column(name="toDateTime")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
@@ -44,7 +39,7 @@ public class TripBooking  {
 
 
     @Column(name="idealbusy")
-    int status;
+    boolean status;
 
     @Column(name="distancetocover")
     float distanceKm;
@@ -111,11 +106,11 @@ public class TripBooking  {
         this.toDateTime = toDateTime;
     }
 
-    public int getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

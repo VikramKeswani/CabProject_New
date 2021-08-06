@@ -21,8 +21,13 @@ public class CustomerController {
 
 
     @PostMapping("/insert")
-    public void createCustomer(@RequestBody Customer customer){
-            customerService.create(customer);
+    public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer){
+        if (customer == null) {
+            return new ResponseEntity(null, HttpStatus.NOT_FOUND);
+        }
+        Customer cust=customerService.createM(customer);
+
+        return new ResponseEntity(cust, HttpStatus.CREATED);
     }
 
     @GetMapping("/get")
@@ -57,15 +62,15 @@ public class CustomerController {
     }
 
     @PostMapping("/validate")
-    public ResponseEntity<String> validateUser(@RequestBody Customer customer){
+    public ResponseEntity<Customer> validateUser(@RequestBody Customer customer){
                 String user=customer.getUsername();
                 String pass = customer.getPassword();
-
-                if(customerService.validateCustomer(user,pass)!=null){
-                    return new ResponseEntity("Login Successful", HttpStatus.ACCEPTED);
+                Customer c = customerService.validateCustomer(user,pass);
+                if(c!=null){
+                    return new ResponseEntity(c,HttpStatus.ACCEPTED);
                 }
 
-                return new ResponseEntity<String>("Falied Login",HttpStatus.NOT_FOUND);
+                return new ResponseEntity(null,HttpStatus.NOT_FOUND);
     }
 
 

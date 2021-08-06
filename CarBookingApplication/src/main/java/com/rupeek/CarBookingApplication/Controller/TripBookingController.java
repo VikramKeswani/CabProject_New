@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/tripbooking")
 public class TripBookingController {
@@ -60,6 +61,11 @@ public class TripBookingController {
         }
 
         return new ResponseEntity(tripBooking, HttpStatus.OK);
+    }
+
+    @PostMapping("/new_trip")
+    public void newTrip(@RequestBody TripBooking trip){
+        tripBookingService.insertTrip(trip);
     }
 
 

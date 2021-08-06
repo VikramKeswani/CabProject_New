@@ -1,6 +1,7 @@
 package com.rupeek.CarBookingApplication.service;
 
 import com.rupeek.CarBookingApplication.Repository.CustomerRepository;
+import com.rupeek.CarBookingApplication.entity.Cab;
 import com.rupeek.CarBookingApplication.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,12 @@ public class CustomerService implements IService<Customer> {
     @Override
     public void create(Customer customer) {
         customerRepository.save(customer);
+    }
+
+    public Customer createM(Customer customer) {
+        Customer cabn = customerRepository.save(customer);
+        return cabn;
+
     }
 
     @Override
@@ -36,8 +43,9 @@ public class CustomerService implements IService<Customer> {
 
     public Customer validateCustomer(String username,String password){
         Customer customer = customerRepository.validateCustomer(username,password);
-        if(customer!=null)
+        if(customer!=null) {
             return customer;
+        }
 //            customerRepository.findAll();
         System.out.println("Wrong UserName Or Password");
         return null;

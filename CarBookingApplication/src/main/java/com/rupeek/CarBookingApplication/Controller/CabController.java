@@ -21,12 +21,13 @@ public class CabController {
 
     //working
     @PostMapping("/insert")
-    public ResponseEntity<Admin> insertCab(@RequestBody Cab cab){
-//        if(cab==null){
-//            return new ResponseEntity( "Sorry No customer with that id", HttpStatus.NOT_FOUND);
-//        }
-        cabService.create(cab);
-        return new ResponseEntity("Succesfully Cab Intserted",HttpStatus.CREATED);
+    public ResponseEntity<Cab> insertCab(@RequestBody Cab cab){
+        if(cab==null){
+            return new ResponseEntity(null, HttpStatus.NOT_FOUND);
+        }
+       Cab c = cabService.createM(cab);
+
+        return new ResponseEntity(c ,HttpStatus.CREATED);
     }
 
 

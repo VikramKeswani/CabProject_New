@@ -2,7 +2,6 @@ package com.rupeek.CarBookingApplication.service;
 
 import com.rupeek.CarBookingApplication.Repository.AdminRepository;
 import com.rupeek.CarBookingApplication.Repository.TripBookingRepository;
-import com.rupeek.CarBookingApplication.entity.Customer;
 import com.rupeek.CarBookingApplication.entity.TripBooking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,8 +42,12 @@ public class TripBookingService implements IService<TripBooking> {
         return adminRepository.getAllTrips(customerId);
     }
 
+    public void insertTrip(TripBooking trip){
+        tripBookingRepository.save(trip);
+        System.out.println(trip.getBillAmount());
+    }
 
-    //calcuate Bills Missing
+
 
 
 }

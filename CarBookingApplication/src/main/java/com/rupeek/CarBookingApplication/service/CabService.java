@@ -14,9 +14,16 @@ public class CabService implements IService<Cab> {
     private CabRepository cabRepository;
 
 
+
+    public Cab createM(Cab cab) {
+        Cab cabn = cabRepository.save(cab);
+            return cabn;
+
+    }
+
     @Override
-    public void create(Cab cab) {
-        cabRepository.save(cab);
+    public void create(Cab object) {
+
     }
 
     @Override

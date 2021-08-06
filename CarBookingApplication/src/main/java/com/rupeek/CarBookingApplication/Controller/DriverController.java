@@ -23,13 +23,13 @@ public class DriverController {
     DriverService driverService;
 
     @PostMapping("/insert")
-    public ResponseEntity<Admin> insertAdmin(@RequestBody Driver driver) {
+    public ResponseEntity<Driver> insertDriver(@RequestBody Driver driver) {
         if (driver == null) {
-            return new ResponseEntity("Sorry No customer with that id", HttpStatus.NOT_FOUND);
+            return new ResponseEntity(null, HttpStatus.NOT_FOUND);
         }
-        driverService.create(driver);
+        Driver drive = driverService.createM(driver);
 
-        return new ResponseEntity("Succesfully Driver Intserted", HttpStatus.CREATED);
+        return new ResponseEntity(drive, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")

@@ -1,6 +1,7 @@
 package com.rupeek.CarBookingApplication.service;
 
 import com.rupeek.CarBookingApplication.Repository.DriverRepository;
+import com.rupeek.CarBookingApplication.entity.Customer;
 import com.rupeek.CarBookingApplication.entity.Driver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,4 +43,8 @@ public class DriverService implements IService<Driver>{
         return driverRepository.viewFreeDriver();
     }
 
+    public Driver createM(Driver driver) {
+        Driver cabn = driverRepository.save(driver);
+        return cabn;
+    }
 }
