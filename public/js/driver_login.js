@@ -1,12 +1,6 @@
 //import 'bootstrap/dist/css/bootstrap.min.css';
 document.querySelector('#login-form').addEventListener("submit",fnAddCab);
 
-function showFetchMessage( message, theme ) {
-    fetchMessage.innerHTML = message;
-    fetchMessage.style.display = 'block';
-    fetchMessage.className = `message message-${theme}`;
-}
-
 
 function fnAddCab(evt){
     obj = {}
@@ -15,7 +9,7 @@ function fnAddCab(evt){
      console.log(obj);
     evt.preventDefault();
 
-    fetch("http://localhost:8080/customer/validate", 
+    fetch("http://localhost:8080/driver/validate", 
     {
         method: 'POST',
         body: JSON.stringify(obj),
@@ -26,7 +20,7 @@ function fnAddCab(evt){
     .then(data => {
         localStorage.setItem("id",data.customerId);
 //        console.log(data)
-        window.location = "./dashboard.html";
+        window.location = "https://www.google.com";
     } ).catch( ( error  => {
         alert( "Wrong Email Id And Password" );
     } ));
