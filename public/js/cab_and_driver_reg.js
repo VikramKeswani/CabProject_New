@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // document.getElementById("inputButton1").disabled = false;
 
 
@@ -61,7 +63,3 @@ function fnAddCab1(evt){
         alert( "Something Went Wrong" );
     } ));
 }
-
-
-
-
