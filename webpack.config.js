@@ -10,6 +10,8 @@ module.exports = {
         "login": "./public/js/login.js",
         "cab_and_driver_reg" : "./public/js/cab_and_driver_reg.js",
        "driver_login": "./public/js/driver_login.js",
+       "user_dashboard": "./public/js/user_dashboard.js",
+       "personal_info": "./public/js/personal_info.js"
     },
     output: {
         path: path.join( __dirname, "dist" ),
@@ -33,12 +35,31 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Cab Registration',
+            title: 'Driver Login',
             filename: './driver_login.html',
             template: path.join( __dirname, 'public', 'driver_login.html' ),
             inject: true,
             chunks: [ 'driver_login']
         }),
+
+        
+            new HtmlWebpackPlugin({
+                title: 'User Dashboard',
+                filename: './user_dashboard.html',
+                template: path.join( __dirname, 'public', 'user_dashboard.html' ),
+                inject: true,
+                chunks: [ 'user_dashboard']
+            }),
+
+            new HtmlWebpackPlugin({
+                title: 'User Personal Info',
+                filename: './personal_info.html',
+                template: path.join( __dirname, 'public', 'personal_info.html' ),
+                inject: true,
+                chunks: [ 'personal_info']
+            }),
+
+
         new HtmlWebpackPlugin({
             title: 'Login',
             filename: './login.html',

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="user_dashboard.css">
+    <style>
+
+        @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background: #645e5c;
+  color: #111010;
+  font-size: 14px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0px auto;
+  max-height: max-content;
+}
+
+.cards_wrap  {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* .card_info{
+    display: flex;
+} */
+
+.cards_wrap .card_item {
+  width: 25%;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+.cards_wrap .card_inner {
+  background: rgb(245, 241, 241);
+}
+
+.cards_wrap .card_top {
+  width: 100%;
+  min-height: 225px;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.cards_wrap .card_bottom {
+  padding: 15px;
+}
+
+.cards_wrap .card_bottom .card_category {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cards_wrap .card_bottom .card_info {
+  padding: 10px;
+  margin: 10px 10px;
+  /* border: 0.5px dashed #243541; */
+}
+
+.cards_wrap .card_bottom .card_info .title {
+  color: #0071bc;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.cards_wrap .card_bottom .card_creator {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .cards_wrap .card_item {
+    width: 33.3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards_wrap .card_item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 528px) {
+  .cards_wrap .card_top {
+    height: auto;
+  }
+  .cards_wrap .card_item {
+    width: 100%;
+  }
+}
+
+        </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <a class="navbar-brand" href="#"><h4>Cab Booking</h4></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"><h5>Home</h5> <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="#"><h5>About Us</h5></a>
+                </li>
+                <li class="nav-item navx">
+                  <a class="nav-link" href="#""><h5>Logout</h5></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <div class="container" style="margin-top:60px;">
+            <center><h1>Hello Vikram Keswani</h1></center>          
+    </div>
+    <main>
+        <div class="wrapper">
+            <div class="cards_wrap">
+              <div class="card_item">
+                <div class="card_inner">
+                  <div class="card_top">
+                    <img src="https://previews.123rf.com/images/seamartini/seamartini2004/seamartini200400142/145251538-car-taxi-isolated-side-view-icon-vector-transportation-service-on-vehicle-cab-with-sign-on-roof-thin.jpg" alt="car"/>
+                  </div>
+                  <div class="card_bottom">
+                    <div class="card_category">
+                      <b>Please Click Below To Book A Cab</b>   
+                    </div>
+                    <div class="card_info">
+                        <form id="book-a-cab">
+                            <a  type="submit" href="#" class="btn btn-primary btn-lg"  style="padding: 0.5rem 5rem; overflow:hidden" role="button" aria-pressed="true">Book Cab</a>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card_item">
+                <div class="card_inner">
+                  <div class="card_top">
+                    <img src="https://image.shutterstock.com/z/stock-vector-people-icon-vector-person-icon-vector-user-icon-vector-1896580660.jpg" alt="car"/>
+                  </div>
+                  <div class="card_bottom">
+                    <div class="card_category">
+                        <b>Please Click Below To See Your Profile</b>
+                    </div>
+                    <div class="card_info">
+                        <a href="./personal_info.html" class="btn btn-primary btn-lg"  style="padding: 0.5rem 5rem; overflow:hidden" role="button" aria-pressed="true">My Profile</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card_item">
+                <div class="card_inner">
+                  <div class="card_top">
+                    <img src="https://thumbs.dreamstime.com/z/coloring-page-outline-cartoon-taxi-driver-car-profession-image-transport-vehicle-children-book-kids-163505016.jpg" alt="car" />
+                  </div>
+                  <div class="card_bottom">
+                    <div class="card_category">
+                        <b>Please See Previous Rides</b>
+                    </div>
+                    <div class="card_info">
+                        <a href="#" class="btn btn-primary btn-lg"  style="padding: 0.5rem 5rem; overflow:hidden" role="button" aria-pressed="true">My Trips</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card_item">
+                <div class="card_inner">
+                  <div class="card_top">
+                    <img src="https://icon-library.com/images/edit-profile-icon/edit-profile-icon-11.jpg" alt="car"/>
+                  </div>
+                  <div class="card_bottom">
+                    <div class="card_category">
+                            <b>Please Click Below To Update Your Profile</b>
+                    </div>
+                    <div class="card_info">
+                        <a href="#" class="btn btn-primary btn-lg"  style="padding: 0.5rem 5rem; overflow:hidden" role="button" aria-pressed="true">Update Profile</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>   
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

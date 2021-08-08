@@ -10,7 +10,7 @@ function showFetchMessage( message, theme ) {
 
 function fnAddCab(evt){
     obj = {}
-    obj.username = document.querySelector("#email").value;
+    obj.email_address = document.querySelector("#email").value;
     obj.password= document.querySelector("#password").value;
      console.log(obj);
     evt.preventDefault();
@@ -26,7 +26,7 @@ function fnAddCab(evt){
     .then(data => {
         localStorage.setItem("id",data.customerId);
 //        console.log(data)
-        window.location = "./dashboard.html";
+        window.location = "./user_dashboard.html";
     } ).catch( ( error  => {
         alert( "Wrong Email Id And Password" );
     } ));
