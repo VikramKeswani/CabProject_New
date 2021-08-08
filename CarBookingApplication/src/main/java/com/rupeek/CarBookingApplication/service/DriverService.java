@@ -47,4 +47,14 @@ public class DriverService implements IService<Driver>{
         Driver cabn = driverRepository.save(driver);
         return cabn;
     }
+
+    public Driver validateDriver(String email,String password){
+        Driver driver = driverRepository.validateDriver(email,password);
+        if(driver!=null) {
+            return driver;
+        }
+
+        System.out.println("Wrong UserName Or Password");
+        return null;
+    }
 }

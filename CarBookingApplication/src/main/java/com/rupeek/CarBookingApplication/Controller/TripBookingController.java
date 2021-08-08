@@ -23,17 +23,17 @@ public class TripBookingController {
 
 
     @PostMapping("/insert")
-    public ResponseEntity<Admin> insertAdmin(@RequestBody TripBooking tripBooking) {
+    public ResponseEntity<TripBooking> insertn(@RequestBody TripBooking tripBooking) {
         if (tripBooking == null) {
-            return new ResponseEntity("Sorry No customer with that id", HttpStatus.NOT_FOUND);
+            return new ResponseEntity(null, HttpStatus.NOT_FOUND);
         }
-        tripBookingService.create(tripBooking);
+        TripBooking trip = tripBookingService.createTripbooking(tripBooking);
 
-        return new ResponseEntity("Succesfully Admin Intserted", HttpStatus.CREATED);
+        return new ResponseEntity(trip,HttpStatus.OK);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Admin> updateAdmin(@RequestBody TripBooking tripBooking) {
+    public ResponseEntity<TripBooking> update(@RequestBody TripBooking tripBooking) {
 
         if (tripBooking == null) {
             return new ResponseEntity("Sorry No customer with that id", HttpStatus.NOT_FOUND);
@@ -44,7 +44,7 @@ public class TripBookingController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<String> deleteAdmin(@RequestParam Integer tripBookingId) {
+    public ResponseEntity<String> delete(@RequestParam Integer tripBookingId) {
         if (tripBookingId == null) {
             return new ResponseEntity<String>("Sorry No customer with that id", HttpStatus.NOT_FOUND);
         }

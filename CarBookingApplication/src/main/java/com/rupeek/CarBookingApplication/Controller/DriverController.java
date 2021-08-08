@@ -17,7 +17,6 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @RequestMapping("/driver")
-@ControllerAdvice
 public class DriverController {
 
     @Autowired(required = true)
@@ -29,16 +28,11 @@ public class DriverController {
             return new ResponseEntity(null, HttpStatus.NOT_FOUND);
         }
         Driver drive = driverService.createM(driver);
-
-
-        if(driver instanceof NullPointerException){
-                return new ResponseEntity<Driver>(HttpStatus.BAD_REQUEST);
-        }
         return new ResponseEntity(drive, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Admin> updateAdmin(@RequestBody Driver driver) {
+    public ResponseEntity<Driver> updateAdmin(@RequestBody Driver driver) {
 
         if (driver == null) {
             return new ResponseEntity("Sorry No customer with that id", HttpStatus.NOT_FOUND);
@@ -80,5 +74,18 @@ public class DriverController {
     public List<Driver> viewFreeDriver(){
         return driverService.viewFreeDriver();
     }
+
+    @PostMapping("/validate")
+    public ResponseEntity<Driver> validateUser(@RequestBody Driver driver){
+        String email=driver.getEmail_address();
+        String pass = driver.getPassword();
+        Driver c = driverService.validateDriver(email,pass);
+        if(c!=null){
+            return new ResponseEntity(c,HttpStatus.ACCEPTED);
+        }
+
+        return new ResponseEntity(null,HttpStatus.NOT_FOUND);
+    }
+
 
 }

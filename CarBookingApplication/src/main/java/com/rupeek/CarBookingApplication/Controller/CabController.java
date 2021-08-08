@@ -33,7 +33,7 @@ public class CabController {
 
     //working
     @PutMapping("/update")
-    public ResponseEntity<Admin> updateCab(@ RequestBody Cab cab){
+    public ResponseEntity<Cab> updateCab(@ RequestBody Cab cab){
 
         if(cab==null){
             return new ResponseEntity( "Sorry No Cab with that id", HttpStatus.NOT_FOUND);

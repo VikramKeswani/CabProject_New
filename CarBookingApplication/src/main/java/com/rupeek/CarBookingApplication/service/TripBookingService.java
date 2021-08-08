@@ -2,6 +2,7 @@ package com.rupeek.CarBookingApplication.service;
 
 import com.rupeek.CarBookingApplication.Repository.AdminRepository;
 import com.rupeek.CarBookingApplication.Repository.TripBookingRepository;
+import com.rupeek.CarBookingApplication.entity.Driver;
 import com.rupeek.CarBookingApplication.entity.TripBooking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,11 @@ public class TripBookingService implements IService<TripBooking> {
     @Override
     public void create(TripBooking object) {
         tripBookingRepository.save(object);
+    }
 
+    public TripBooking createTripbooking(TripBooking object){
+        TripBooking trip = tripBookingRepository.save(object);
+        return trip;
     }
 
     @Override

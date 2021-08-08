@@ -48,7 +48,7 @@ public class TripBooking  {
     float billAmount;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     // @JoinColumn annotation helps us specify the column
     // we'll use for joining an entity association or element collection.
     @JoinColumn(name = "driverId", referencedColumnName = "driverid")
