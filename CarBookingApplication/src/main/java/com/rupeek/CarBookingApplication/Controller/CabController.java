@@ -23,7 +23,7 @@ public class CabController {
     @PostMapping("/insert")
     public ResponseEntity<Cab> insertCab(@RequestBody Cab cab){
         if(cab==null){
-            return new ResponseEntity(null, HttpStatus.NOT_FOUND);
+            return new ResponseEntity("No User Exist", HttpStatus.NOT_FOUND);
         }
        Cab c = cabService.createM(cab);
 

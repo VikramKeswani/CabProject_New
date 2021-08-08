@@ -63,9 +63,9 @@ public class CustomerController {
 
     @PostMapping("/validate")
     public ResponseEntity<Customer> validateUser(@RequestBody Customer customer){
-                String user=customer.getUsername();
+                String email=customer.getEmail_address();
                 String pass = customer.getPassword();
-                Customer c = customerService.validateCustomer(user,pass);
+                Customer c = customerService.validateCustomer(email,pass);
                 if(c!=null){
                     return new ResponseEntity(c,HttpStatus.ACCEPTED);
                 }

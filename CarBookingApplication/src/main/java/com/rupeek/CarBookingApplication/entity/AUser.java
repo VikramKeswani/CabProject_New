@@ -1,7 +1,10 @@
 package com.rupeek.CarBookingApplication.entity;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 @MappedSuperclass
+@DynamicUpdate
 public class AUser {
     @Column(name="username")
     private String username;
@@ -11,7 +14,7 @@ public class AUser {
     private String address;
     @Column(name="mobilenumber")
     private int phone_number;
-    @Column(name="emailaddress")
+    @Column(name="emailaddress",unique = true)
     private String email_address;
 
     public AUser(String username, String password, String address, int phone_number, String email_address) {

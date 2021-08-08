@@ -6,20 +6,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-top:4%;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: rgb(209, 120, 18);
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: red;
+}
+
+.myprop1{
+    margin-top:100px;
+}
+
+.myprop2{
+    margin-top: 80px;
+}
+
+button {
+    margin:0 auto;
+    display:block;
+}
+
+</style>
+
+
 <script defer src="register_dashboard.bundle.js"></script></head>
 <body>
-    <div class="container">
-        <div class="row" space>
-            <button class="btn btn-primary" id="inputButton1"><a href="./register_cab.html">Cab Registration</a></button>
-            
-             <button class="btn btn-primary" id="inputButton2">Driver Registration</button>
+    <div class="continer">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Cab Booking</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign up as user</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Register As Driver</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login Driver</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+         </div>
+<div class="split left">
+    <form id="cab-reg-form">
+    <section style="border-color: black; border-width: 4px;" >
+        <div class="container myprop1">      
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="container">
+                                <h1>Register</h1>               
+                            </div>
+                            <br>
+                            <div class="container">
+                            <p class="text-h3" style="font-size:xx-large;"><b>FILL CAB DETAILS</b></p>                        
+                            </div>
+                        </div>
+                    </div>
+          <div class="row align-items-center">
+            <div class="col mt-4">
+              <input type="text" class="form-control" placeholder="Vechile Model Name" id="cabType" required>
+            </div>
+          </div>
+          <div class="row align-items-center mt-4">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Per Km Rate" id="perKmRate" required>
+            </div>
+          </div>
+          <div class="row justify-content-start mt-4">
+            <div class="col">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input">
+                  I Read and Accept <a href="./terms_conditions.html">Terms and Conditions</a>
+                </label>
+              </div>
+              <br>
+            <div class="container">
+                 <button type="submit" class="btn btn-primary btn-lg btn-block" > Submit</button>                
+            </div>
+
+            </div>
+          </div>
         </div>
-    
     </div>
- 
+</section> 
+</form>
+</div>
+
+      <div class="split right">
+          <form id="driver-reg-form">
+            <section class="myprop" style="border-color: black; border-width: 4px;" >
+                <div class="container">      
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div class="container">
+                                        <h1>Register</h1>               
+                                    </div>
+                                    <br>
+                                    <div class="container">
+                                    <p class="text-h3" style="font-size:x-large;"><b>FILL DRIVER DETAILS</b></p>                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col mt-4">
+                                    <input type="text" class="form-control" placeholder="Licenece Plate Number" id="licenceNo" required>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Mobile Number" id="phone_number" required>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Email Id" id="email_address" required>
+                                </div>
+                                <div class="col">
+                                    <input type="password" class="form-control" placeholder="Passowrd" id="password" required>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Address" id="address">
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Name Of Person" id="username">
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col">
+                                    <input type="number" class="form-control" placeholder="Rating" id="rating">
+                                </div>
+                            </div>
+                            <div class="row justify-content-start mt-4">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input">
+                                                        I Read and Accept <a href="./terms_condition.html">Terms and Conditions</a>
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div class="container">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="input2Button"> Submit</button>                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </section>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="./register_table.js"></script>
+    <script src="./register_dashboard.js"></script>    
 </body>
 </html>

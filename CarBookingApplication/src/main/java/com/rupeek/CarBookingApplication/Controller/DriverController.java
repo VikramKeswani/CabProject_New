@@ -17,6 +17,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @RequestMapping("/driver")
+@ControllerAdvice
 public class DriverController {
 
     @Autowired(required = true)
@@ -29,6 +30,10 @@ public class DriverController {
         }
         Driver drive = driverService.createM(driver);
 
+
+        if(driver instanceof NullPointerException){
+                return new ResponseEntity<Driver>(HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity(drive, HttpStatus.CREATED);
     }
 

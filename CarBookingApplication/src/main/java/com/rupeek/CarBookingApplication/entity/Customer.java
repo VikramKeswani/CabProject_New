@@ -1,10 +1,12 @@
 package com.rupeek.CarBookingApplication.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
 @Entity
+@DynamicUpdate
 @Table(name="CustomerTable")
 public class Customer extends AUser{
     @Id
