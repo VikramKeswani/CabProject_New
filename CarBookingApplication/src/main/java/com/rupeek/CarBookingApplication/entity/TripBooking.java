@@ -18,7 +18,7 @@ public class TripBooking  {
 
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customerId", referencedColumnName = "customerid", unique = true)
     private Customer customer;
 
@@ -29,12 +29,12 @@ public class TripBooking  {
     private String toLocation;
 
     @Column(name="fromDateTime")
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="DD-MM-YYYY")
     private Date fromDateTime;
 
 
     @Column(name="toDateTime")
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="DD-MM-YYYY")
     private Date toDateTime;
 
 

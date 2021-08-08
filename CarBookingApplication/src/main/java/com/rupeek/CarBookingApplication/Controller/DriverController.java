@@ -1,9 +1,6 @@
 package com.rupeek.CarBookingApplication.Controller;
 
-import com.rupeek.CarBookingApplication.entity.Admin;
-import com.rupeek.CarBookingApplication.entity.Cab;
-import com.rupeek.CarBookingApplication.entity.Customer;
-import com.rupeek.CarBookingApplication.entity.Driver;
+import com.rupeek.CarBookingApplication.entity.*;
 import com.rupeek.CarBookingApplication.service.CabService;
 import com.rupeek.CarBookingApplication.service.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +68,7 @@ public class DriverController {
     }
 
     @GetMapping("/viewfreedriver")
-    public List<Driver> viewFreeDriver(){
+    public Driver viewFreeDriver(){
         return driverService.viewFreeDriver();
     }
 

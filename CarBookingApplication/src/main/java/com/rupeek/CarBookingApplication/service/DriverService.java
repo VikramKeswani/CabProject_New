@@ -1,6 +1,8 @@
 package com.rupeek.CarBookingApplication.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rupeek.CarBookingApplication.Repository.DriverRepository;
+import com.rupeek.CarBookingApplication.Repository.TripBookingRepository;
 import com.rupeek.CarBookingApplication.entity.Customer;
 import com.rupeek.CarBookingApplication.entity.Driver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,8 @@ public class DriverService implements IService<Driver>{
     @Autowired
     private DriverRepository driverRepository;
 
+    @Autowired
+    private TripBookingRepository tripBookingRepository;
 
     @Override
     public void create(Driver driver) {
@@ -39,10 +43,11 @@ public class DriverService implements IService<Driver>{
         return driverRepository.viewBestDriver();
     }
 
-    public List<Driver> viewFreeDriver(){
-        return driverRepository.viewFreeDriver();
-    }
+    public Driver viewFreeDriver(){
+        List<Driver> driverList = driverRepository.viewFreeDriver();
 
+        return driverList.get(0);
+    }
     public Driver createM(Driver driver) {
         Driver cabn = driverRepository.save(driver);
         return cabn;

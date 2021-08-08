@@ -35,6 +35,7 @@ public class CustomerService implements IService<Customer>{
 
     @Override
     public void update(Customer object){
+                customerRepository.save(object);
 
     }
 

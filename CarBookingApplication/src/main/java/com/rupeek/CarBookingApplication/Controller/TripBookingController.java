@@ -23,7 +23,7 @@ public class TripBookingController {
 
 
     @PostMapping("/insert")
-    public ResponseEntity<TripBooking> insertn(@RequestBody TripBooking tripBooking) {
+    public ResponseEntity<TripBooking> insert(@RequestBody TripBooking tripBooking) {
         if (tripBooking == null) {
             return new ResponseEntity(null, HttpStatus.NOT_FOUND);
         }

@@ -24,7 +24,7 @@ function fnAddCab(evt){
         }
     }).then(resp => resp.json())
     .then(data => {
-        localStorage.setItem("id",data.customerId);
+        localStorage.setItem("userid",data.customerId);
 //        console.log(data)
         window.location = "./user_dashboard.html";
     } ).catch( ( error  => {

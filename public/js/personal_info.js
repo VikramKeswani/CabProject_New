@@ -1,31 +1,49 @@
 
     function appendData(data) {
-        var mainContainer = document.getElementById("personal_information");
+        var mainContainer = document.getElementById("details");
             var div = document.createElement("div");
-            //div.innerHTML = 'Name: ' + data.username + ' ' + data.email_address+' '+data.phone_number;
-            div.innerHTML =`<h2>${data.username}</h2>
-            <label class="title">Rating:</label>
-            <label>4.5</label>
-            <br>
-        <div class="row">
-            <div class="">
-                <label>Registered Phone Number:</label>
+            div.innerHTML =`<div class="info">
+                <h3>Information</h3>
+                <div class="info_data">
+                     <div class="data">
+                        <h4>Email</h4>
+                        <p>${data.email_address}</p>
+                     </div>
+                     <div class="data">
+                       <h4>Phone</h4>
+                        <p>${data.phone_number}</p>
+                  </div>
+                </div>
+            </div>
+          
+          <div class="projects">
+                <h3>Address Info</h3>
+                <div class="projects_data">
+                     <div class="data">
+                        <h4>Address</h4>
+                        <p>${data.address}</p>
+                     </div>
+                     <div class="data">
+                       <h4>Name</h4>
+                        <p>${data.username}</p>
+                  </div>
+                </div>
+            </div>
+          
+            <div class="social_media">
+              <div class="container">
+                <p>Share Us On </p>
               </div>
-              <div class="">
-                <label>${data.phone_number}</label>  
+              <br>
+              <div class="container">
+                <ul>
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              </ul>
               </div>
-        
-        </div>
-        <div class="row">
-            <div class="col-md-1">
-                <label>Email Address:</label>
-              </div>
-              <div class="col-md-10">
-                <label>${data.email_address}</label>
-              </div>
-        </div>
-          <br>
-            <p><button class="button">Contact</button></p>`
+    
+          </div>`
             mainContainer.appendChild(div);
     }    
     

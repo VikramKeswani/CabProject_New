@@ -14,7 +14,7 @@ public class AUser {
     private String address;
     @Column(name="mobilenumber")
     private int phone_number;
-    @Column(name="emailaddress",unique = true)
+    @Column(name="emailaddress")
     private String email_address;
 
     public AUser(String username, String password, String address, int phone_number, String email_address) {
