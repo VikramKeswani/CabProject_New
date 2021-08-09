@@ -2,6 +2,7 @@ package com.rupeek.CarBookingApplication.service;
 
 import com.rupeek.CarBookingApplication.Repository.AdminRepository;
 import com.rupeek.CarBookingApplication.Repository.TripBookingRepository;
+import com.rupeek.CarBookingApplication.entity.Customer;
 import com.rupeek.CarBookingApplication.entity.Driver;
 import com.rupeek.CarBookingApplication.entity.TripBooking;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,9 @@ public class TripBookingService implements IService<TripBooking> {
         System.out.println(trip.getBillAmount());
     }
 
-
+    public void freeRide(Integer driverId){
+        tripBookingRepository.freeRide(driverId);
+    }
 
 
 }

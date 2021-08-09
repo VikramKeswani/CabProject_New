@@ -63,10 +63,9 @@ public class TripBookingController {
         return new ResponseEntity(tripBooking, HttpStatus.OK);
     }
 
-    @PostMapping("/new_trip")
-    public void newTrip(@RequestBody TripBooking trip){
-        tripBookingService.insertTrip(trip);
+
+    @GetMapping("/freeride")
+    public void freeRide(@RequestParam Integer driverId){
+         tripBookingService.freeRide(driverId);
     }
-
-
 }

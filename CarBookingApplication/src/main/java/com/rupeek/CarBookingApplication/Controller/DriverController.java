@@ -72,8 +72,21 @@ public class DriverController {
         return driverService.viewFreeDriver();
     }
 
+//    @PostMapping("/validate")
+//    public ResponseEntity<Driver> validateUser(@RequestBody Driver driver){
+//        String email=driver.getEmail_address();
+//        String pass = driver.getPassword();
+//        Driver c = driverService.validateDriver(email,pass);
+//        if(c!=null){
+//            return new ResponseEntity(c,HttpStatus.ACCEPTED);
+//        }
+//
+//        return new ResponseEntity(null,HttpStatus.NOT_FOUND);
+//    }
+
+
     @PostMapping("/validate")
-    public ResponseEntity<Driver> validateUser(@RequestBody Driver driver){
+    public ResponseEntity<Driver> validateDriver(@RequestBody Driver driver){
         String email=driver.getEmail_address();
         String pass = driver.getPassword();
         Driver c = driverService.validateDriver(email,pass);
@@ -83,6 +96,7 @@ public class DriverController {
 
         return new ResponseEntity(null,HttpStatus.NOT_FOUND);
     }
+
 
 
 }

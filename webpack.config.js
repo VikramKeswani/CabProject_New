@@ -13,7 +13,10 @@ module.exports = {
        "user_dashboard": "./public/js/user_dashboard.js",
        "personal_info": "./public/js/personal_info.js",
        "user_update": "./public/js/user_update.js",
-       "ridebook" : "./public/js/ridebook.js"
+       "ridebook" : "./public/js/ridebook.js",
+       "driver_login": "./public/js/driver_login.js",
+       "driver_dashboard": "./public/js/driver_dashboard.js",
+       "free_cab": "./public/js/freecab.js"
     },
     output: {
         path: path.join( __dirname, "dist" ),
@@ -50,6 +53,33 @@ module.exports = {
             template: path.join( __dirname, 'public', 'user_update.html' ),
             inject: true,
             chunks: [ 'user_update']
+        }),
+
+
+        new HtmlWebpackPlugin({
+            title: 'User Update',
+            filename: './freecab.html',
+            template: path.join( __dirname, 'public', 'freecab.html' ),
+            inject: true,
+            chunks: [ 'freecab']
+        }),
+
+
+        new HtmlWebpackPlugin({
+            title: 'User Update',
+            filename: './driver_login.html',
+            template: path.join( __dirname, 'public', 'driver_login.html' ),
+            inject: true,
+            chunks: [ 'driver_login']
+        }),
+
+
+        new HtmlWebpackPlugin({
+            title: 'User Update',
+            filename: './driver_dashboard.html',
+            template: path.join( __dirname, 'public', 'driver_dashboard.html' ),
+            inject: true,
+            chunks: [ 'driver_dashboard']
         }),
 
 

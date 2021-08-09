@@ -45,8 +45,14 @@ public class DriverService implements IService<Driver>{
 
     public Driver viewFreeDriver(){
         List<Driver> driverList = driverRepository.viewFreeDriver();
-
-        return driverList.get(0);
+        Driver d= driverList.get(0);
+        Integer x=d.getDriverId();
+        System.out.println("YES I AM HERE");
+        if((driverRepository.findDriver(x))!=null) {
+            System.out.println("Yes");
+            driverRepository.lockRide(d.getDriverId());
+        }
+        return d;
     }
     public Driver createM(Driver driver) {
         Driver cabn = driverRepository.save(driver);

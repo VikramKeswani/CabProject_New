@@ -18,7 +18,7 @@ public class TripBooking  {
 
 
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "customerId", referencedColumnName = "customerid", unique = true)
     private Customer customer;
 
@@ -38,7 +38,7 @@ public class TripBooking  {
     private Date toDateTime;
 
 
-    @Column(name="idealbusy")
+    @Column(name="status")
     boolean status;
 
     @Column(name="distancetocover")

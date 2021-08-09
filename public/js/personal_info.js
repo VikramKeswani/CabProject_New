@@ -50,7 +50,7 @@
 
 function init(){
 function getCabById(){
-    let cabId = parseInt(localStorage.getItem("id"));
+    let cabId = parseInt(localStorage.getItem("userid"));
 
  fetch("http://localhost:8080/customer/get?id="+cabId)
         .then(resp => resp.json())
@@ -66,3 +66,21 @@ getCabById();
 
 
 init();
+
+
+
+
+const logout = document.getElementById("logout")
+    logout.addEventListener("click" , function(event){
+        event.preventDefault()
+        localStorage.removeItem("userid")
+        window.location = "http://127.0.0.1:8081/login.html";
+    })
+
+
+const home = document.getElementById("home")
+    home.addEventListener("click" , function(event){
+        event.preventDefault()
+
+        window.location = "http://127.0.0.1:8081/user_dashboard.html";
+    })

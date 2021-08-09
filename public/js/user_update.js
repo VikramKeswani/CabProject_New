@@ -50,7 +50,7 @@ function appendData(data) {
                         </div>
                         <br>
                         <div class="container">
-                        <a href="#" class="btn btn-info" role="button" onclick= "update()">Submit</a> 
+                        <a href="#" class="btn btn-info" role="button" id="inputButton">Submit</a> 
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ function appendData(data) {
 
 
 function getCabById(){
-let cabId = parseInt(localStorage.getItem("id"));
+let cabId = parseInt(localStorage.getItem("userid"));
 fetch("http://localhost:8080/customer/get?id="+cabId)
     .then(resp => resp.json())
     .then(data => {
@@ -78,13 +78,13 @@ getCabById();
 
 
 
-
+document.getElementById ("inputButton").addEventListener ("click", update, false);
 
 
 
 function update(){
     obj = {}
-    obj.customerId=localStorage.getItem("id").value;
+    obj.customerId=localStorage.getItem("userid").value;
     obj.email_address = document.querySelector("#email_address").value;
     obj.username = document.querySelector("#username").value;
     obj.password= document.querySelector("#password").value;
@@ -108,4 +108,16 @@ function update(){
     } ));
 };
 
+const logout = document.getElementById("logout")
+    logout.addEventListener("click" , function(event){
+        event.preventDefault()
+        localStorage.removeItem("userid")
+        window.location = "http://127.0.0.1:8081/login.html";
+    })
 
+
+const home = document.getElementById("home")
+    home.addEventListener("click" , function(event){
+        event.preventDefault()
+        window.location = "http://127.0.0.1:8081/user_dashboard.html";
+    })

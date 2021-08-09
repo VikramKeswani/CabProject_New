@@ -1,10 +1,10 @@
 //import 'bootstrap/dist/css/bootstrap.min.css';
-document.querySelector('#login-form').addEventListener("submit",fnAddCab);
+document.querySelector('#driverlogin-form').addEventListener("submit",fnAddCab);
 
 
 function fnAddCab(evt){
     obj = {}
-    obj.username = document.querySelector("#email").value;
+    obj.email_address = document.querySelector("#email").value;
     obj.password= document.querySelector("#password").value;
      console.log(obj);
     evt.preventDefault();
@@ -18,12 +18,13 @@ function fnAddCab(evt){
         }
     }).then(resp => resp.json())
     .then(data => {
-        localStorage.setItem("id",data.customerId);
-//        console.log(data)
-        window.location = "https://www.google.com";
+        localStorage.setItem("driverid",data.driverId);
+        console.log(data)
+        window.location = "./driver_dashboard.html";
     } ).catch( ( error  => {
         alert( "Wrong Email Id And Password" );
     } ));
+    
 }
 
 

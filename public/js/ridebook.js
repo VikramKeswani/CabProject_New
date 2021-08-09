@@ -18,7 +18,7 @@ submit.addEventListener("submit", function(event){
 //    customer.customerId = localStorage.getItem("userid");
     //console.log
     customer.customerId = localStorage.getItem("customer_Id");
-    driver.driverId =document.getElementById("driver_Id").value
+    drivers.driverId =document.getElementById("driver_Id").value
     obj.fromLocation = document.getElementById("fromLocation").value
     obj.toLocation = document.getElementById("toLocation").value
     obj.fromDateTime = document.getElementById("fromDateTime").value
