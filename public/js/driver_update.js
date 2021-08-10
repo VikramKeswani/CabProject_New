@@ -24,7 +24,7 @@ function appendData(data) {
                 </div>
                 <div class="row align-items-center mt-4">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Unique Id" id="customerId" value=${data.customerId} readonly>
+                        <input type="text" class="form-control" placeholder="Unique Id" id="customerId" value=${data.driverId} readonly>
                     </div>
                 </div>
                 <div class="row align-items-center mt-4">
@@ -58,8 +58,8 @@ function appendData(data) {
 
 
 function getCabById(){
-let cabId = parseInt(localStorage.getItem("userid"));
-fetch("http://localhost:8080/customer/get?id="+cabId)
+let cabId = parseInt(localStorage.getItem("driverid"));
+fetch("http://localhost:8080/driver/get?id="+cabId)
     .then(resp => resp.json())
     .then(data => {
         console.log(data);
@@ -78,9 +78,9 @@ update.addEventListener("click" , function(event){
         obj.username = document.getElementById("username").value
         obj.password = document.getElementById("password").value
         obj.address = document.getElementById("address").value
-       obj.customerId = document.getElementById("customerId").value
+       obj.driverId = document.getElementById("customerId").value
         obj.email_address = document.getElementById("email_address").value
-    const url="http://localhost:8080/customer/update/"
+    const url="http://localhost:8080/driver/update/"
     fetch(url,{method: 'PUT',
     body: JSON.stringify(obj),
     headers: {
@@ -97,15 +97,15 @@ update.addEventListener("click" , function(event){
 
     const del = document.getElementById("inputButton2")
     del.addEventListener("click" , function(event){
-    let cabId = localStorage.getItem("userid");
-    const url="http://localhost:8080/customer/delete/"+cabId;
+    let cabId = localStorage.getItem("driverid");
+    const url="http://localhost:8080/driver/delete?cabId="+cabId;
     fetch(url,{method: 'DELETE',
     headers: {
         "Content-Type": "application/json"
     }})
         .then(data => {
             console.log(url);
-            localStorage.removeItem("userid")
+            localStorage.removeItem("driverid")
             window.location = "http://127.0.0.1:8081/login.html";
         })
     })
@@ -128,5 +128,5 @@ const logout = document.getElementById("logout")
 const home = document.getElementById("home")
     home.addEventListener("click" , function(event){
         event.preventDefault()
-        window.location = "http://127.0.0.1:8081/user_dashboard.html";
+        window.location = "http://127.0.0.1:8081/driver_dashboard.html";
     })

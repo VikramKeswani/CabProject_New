@@ -28,7 +28,10 @@ public class TripBookingController {
             return new ResponseEntity(null, HttpStatus.NOT_FOUND);
         }
         TripBooking trip = tripBookingService.createTripbooking(tripBooking);
+        if(trip==null)
+                return new ResponseEntity(null,HttpStatus.NOT_FOUND);
 
+   //     System.out.println("Yes I am Reaching");
         return new ResponseEntity(trip,HttpStatus.OK);
     }
 
@@ -67,5 +70,15 @@ public class TripBookingController {
     @GetMapping("/freeride")
     public void freeRide(@RequestParam Integer driverId){
          tripBookingService.freeRide(driverId);
+    }
+
+    @GetMapping("/getridestaken")
+    public List<TripBooking> rides(@RequestParam Integer driverId){
+        return tripBookingService.allRides(driverId);
+    }
+
+    @GetMapping("/getridestakencustomer")
+    public List<TripBooking> rides2(@RequestParam Integer driverId){
+        return tripBookingService.allRides2(driverId);
     }
 }

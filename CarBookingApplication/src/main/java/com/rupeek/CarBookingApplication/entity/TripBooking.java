@@ -1,6 +1,7 @@
 package com.rupeek.CarBookingApplication.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,7 +19,7 @@ public class TripBooking  {
 
 
 
-    @OneToOne
+    @OneToOne//(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "customerId", referencedColumnName = "customerid", unique = true)
     private Customer customer;
 
@@ -48,7 +49,7 @@ public class TripBooking  {
     float billAmount;
 
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne//(cascade = CascadeType.MERGE)
     // @JoinColumn annotation helps us specify the column
     // we'll use for joining an entity association or element collection.
     @JoinColumn(name = "driverId", referencedColumnName = "driverid")
@@ -66,12 +67,12 @@ public class TripBooking  {
         this.tripBookingId = tripBookingId;
     }
 
-    public Customer getCustId() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustId(Customer custId) {
-        this.customer = custId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public String getFromLocation() {

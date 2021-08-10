@@ -40,7 +40,7 @@ public class CustomerService implements IService<Customer>{
     }
 
 
-//    @Override
+    @Override
     public void delete(Integer id) {
         customerRepository.deleteById(id);
     }

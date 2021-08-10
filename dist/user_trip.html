@@ -121,75 +121,44 @@ body{
   display: block;
   font-size: 18px;
 }
-
-body {
-        text-align: center;
-        padding: 40px 0;
-        background: #EBF0F5;
-      }
-        h1 {
-          color: #88B04B;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-weight: 900;
-          font-size: 40px;
-          margin-bottom: 10px;
-        }
-        p {
-          color: #404F5E;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-size:20px;
-          margin: 0;
-        }
-      i {
-        color: #9ABC66;
-        font-size: 100px;
-        line-height: 200px;
-        margin-left:-15px;
-      }
-      .card {
-        background: white;
-        padding: 60px;
-        border-radius: 4px;
-        box-shadow: 0 2px 3px #C8D0D8;
-        display: inline-block;
-        margin: 0 auto;
-      }
   </style>
-</head>
+<script defer src="user_trip.bundle.js"></script></head>
 <body>
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <a class="navbar-brand" href="#"><h4>Cab Booking</h4></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" id="home" href="#"> <h5>Home </h5></a> 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./aboutus.html" id=""> <h5>About Us</h5></a>
-            </li>
-            <li class="nav-item navx">
-              <a class="nav-link" href="#" id="logout"> <h5>Logout </h5></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <a class="navbar-brand" href="#"><h4>Cab Booking</h4></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="home"> <h5>Home </h5></a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./aboutus.html" id=""> <h5>About Us</h5></a>
+          </li>
+          <li class="nav-item navx">
+            <a class="nav-link" href="#" id="logout"> <h5>Logout </h5></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 </header>
-<main>
-    <div class="card">
-        <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin: 14px; auto;">
-          <i class="checkmark">✓</i>
-        </div>
-          <h1>Success</h1> 
-          <p>Ready To Go For Next Ride</p>
-          <br>
-      </div>  
-</main>
 
+
+
+  <div class="wrapper">
+    <div class="left">
+      <img src="https://cdn.icon-icons.com/icons2/317/PNG/512/profile-icon_34378.png" alt="user" width="50">
+      <h4>Hello User</h4>
+  </div>
+  <div class="right" id="details">
+
+  </div>
+
+</div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -15,9 +15,7 @@ submit.addEventListener("submit", function(event){
     obj={}
     customer={}
     drivers={}
-//    customer.customerId = localStorage.getItem("userid");
-    //console.log
-    customer.customerId = localStorage.getItem("customer_Id");
+    customer.customerId = localStorage.getItem("userid");
     drivers.driverId =document.getElementById("driver_Id").value
     obj.fromLocation = document.getElementById("fromLocation").value
     obj.toLocation = document.getElementById("toLocation").value
@@ -26,7 +24,7 @@ submit.addEventListener("submit", function(event){
     obj.distanceKm = document.getElementById("distanceInKm").value
     obj.status=1
     obj.driver = drivers
-    obj.custId = customer
+    obj.customer = customer
     fetch("http://localhost:8080/tripbooking/insert", 
     {
     method: 'POST',
@@ -36,8 +34,12 @@ submit.addEventListener("submit", function(event){
     }
 })
 .then(data => {
-    alert("Record Inserted Successfully"+  data);
-} )
+    window.location.reload();
+    
+} ).catch((error) => {
+    console.log(error)
+})
+
 });  
 
 

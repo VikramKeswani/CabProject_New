@@ -54,11 +54,13 @@ public class CustomerController {
     @DeleteMapping("/delete/{customerId}")
     public void deleteCustomer(@PathVariable("customerId") int customerId) {
         customerService.delete(customerId);
+        //return "deleted";
     }
 
     @PutMapping("/update")
-    public void updateCustomer(@RequestBody Customer customer) {
+    public String updateCustomer(@RequestBody Customer customer) {
         customerService.update(customer);
+        return "update";
     }
 
     @PostMapping("/validate")

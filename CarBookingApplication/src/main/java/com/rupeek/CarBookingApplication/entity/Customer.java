@@ -15,7 +15,7 @@ public class Customer extends AUser{
 
     @JsonIgnore
     @OneToOne(mappedBy = "customer")
-    private TripBooking tripBookingId;
+        private TripBooking tripBookingId;
 
     public Customer(){
         super();

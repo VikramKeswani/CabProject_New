@@ -57,5 +57,13 @@ public class TripBookingService implements IService<TripBooking> {
         tripBookingRepository.freeRide(driverId);
     }
 
+    public List<TripBooking> allRides(Integer driverId) {
+        return tripBookingRepository.getAllCustomerRides(driverId);
+    }
+
+        public List<TripBooking> allRides2(Integer customerId){
+            return tripBookingRepository.getAllCustomerRides2(customerId);
+    }
+
 
 }

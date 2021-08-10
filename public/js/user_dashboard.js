@@ -34,6 +34,23 @@
 // });
 
 
+// const del = document.getElementById("inputDelete")
+    
+// del.addEventListener("click" , function(event){
+//     let cabId = localStorage.getItem("userid");
+//     const url="http://localhost:8080/customer/delete/"+cabId;
+//     fetch(url,{method: 'DELETE'})
+//         .then(resp => resp.text())
+//         .then(data => {
+//             console.log(url);
+//             localStorage.removeItem("userid")
+//             window.location = "http://127.0.0.1:8081/login.html";
+//         })
+//     })
+
+
+
+
 const logout = document.getElementById("logout")
     logout.addEventListener("click" , function(event){
         event.preventDefault()

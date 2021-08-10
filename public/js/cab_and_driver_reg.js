@@ -1,10 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-// document.getElementById("inputButton1").disabled = false;
-
 
 document.querySelector('#cab-reg-form').addEventListener("submit",fnAddCab);
-//document.getElementById('1').onclick = reply_click;
+
 function fnAddCab(evt){
     obj = {}
     obj.perKmRate = document.querySelector("#perKmRate").value;
@@ -23,7 +19,8 @@ function fnAddCab(evt){
     .then(data => {
         alert("Information Filled Successfully");
         localStorage.setItem("cabId",data.cabId);
-        window.location.replace("#");
+        window.location.reload();
+        //window.location.replace("#");
 //         document.getElementById("#input2Button").disabled = false;
     } ).catch( ( error  => {
         alert( "Something Went Wrong" );
@@ -58,7 +55,8 @@ function fnAddCab1(evt){
     .then(data => {
         alert("Record Inserted Successfully")
         localStorage.removeItem("cabId");
-        window.location.replace("#");
+        window.location.reload();
+        //window.location.replace("#");
     } ).catch( ( error  => {
         alert( "Something Went Wrong" );
     } ));
